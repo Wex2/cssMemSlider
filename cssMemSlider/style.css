@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000000;
+}
+.wrapper {
+    padding: 7vh;
+    height: 100vh;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 2vh 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+    background-color: #221252;
+    border-radius: 1rem;
+}
+.slider {
+    width: 600%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+}
+.mem {
+    width: 100%;
+    display: flex;
+    transform: translateX(0);
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s;
+}
+.mem-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.text-container {
+    overflow: hidden;
+    width: 600%;
+    display: flex;
+    align-items: center;
+}
+.text {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    transform: translateX(0);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    color: #ffffff;
+}
+input[name="radio"] {
+    display: none;
+}
+.navigation {
+    display: flex;
+}
+.buttons {
+    display: flex;
+    padding: 0 2vh;
+}
+.btn {
+    padding: 1rem;
+    cursor: pointer;
+}
+.marker {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: #b629b4;
+    border: 0.25rem solid #b629b4;
+    transition: all 0.5s;
+}
+.btn:hover .marker {
+    border: 0.25rem solid #ffffff;
+    background-color: #ffffff;
+}
+.btn:active .marker {
+    border: 0.25rem solid #000000;
+    background-color: #000000;
+    box-shadow: 0 0 2rem #b093b6;
+}
+#radio1:checked ~ .buttons .navigation .btn .marker1,
+#radio2:checked ~ .buttons .navigation .btn .marker2,
+#radio3:checked ~ .buttons .navigation .btn .marker3,
+#radio4:checked ~ .buttons .navigation .btn .marker4,
+#radio5:checked ~ .buttons .navigation .btn .marker5,
+#radio6:checked ~ .buttons .navigation .btn .marker6{
+    background-color: #221252;
+}
+#radio1:checked ~ .buttons .navigation .btn:active .marker1,
+#radio2:checked ~ .buttons .navigation .btn:active .marker2,
+#radio3:checked ~ .buttons .navigation .btn:active .marker3,
+#radio4:checked ~ .buttons .navigation .btn:active .marker4,
+#radio5:checked ~ .buttons .navigation .btn:active .marker5,
+#radio6:checked ~ .buttons .navigation .btn:active .marker6{
+    background-color: #da2b92;
+    border: 0.25rem solid #b038f5;
+    box-shadow: 0 0 2rem #da2b92;
+}
+#radio1:checked ~ .slider .mem {
+    transform: translateX(0);
+}
+#radio2:checked ~ .slider .mem {
+    transform: translateX(-100%);
+}
+#radio3:checked ~ .slider .mem {
+    transform: translateX(-200%);
+}
+#radio4:checked ~ .slider .mem {
+    transform: translateX(-300%);
+}
+#radio5:checked ~ .slider .mem {
+    transform: translateX(-400%);
+}
+#radio6:checked ~ .slider .mem {
+    transform: translateX(-500%);
+}
+#radio1:checked ~ .buttons .text-container .text {
+    transform: translateX(0);
+}
+#radio2:checked ~ .buttons .text-container .text {
+    transform: translateX(-100%);
+}
+#radio3:checked ~ .buttons .text-container .text {
+    transform: translateX(-200%);
+}
+#radio4:checked ~ .buttons .text-container .text {
+    transform: translateX(-300%);
+}
+#radio5:checked ~ .buttons .text-container .text {
+    transform: translateX(-400%);
+}
+#radio6:checked ~ .buttons .text-container .text {
+    transform: translateX(-500%);
+}
+#radio1:checked ~ .buttons .text-container .text:nth-child(1),
+#radio2:checked ~ .buttons .text-container .text:nth-child(2),
+#radio3:checked ~ .buttons .text-container .text:nth-child(3),
+#radio4:checked ~ .buttons .text-container .text:nth-child(4),
+#radio5:checked ~ .buttons .text-container .text:nth-child(5),
+#radio6:checked ~ .buttons .text-container .text:nth-child(6){
+    color: #ffffff;
+}
+@media screen and (max-width: 700px) {
+    .buttons {
+        flex-direction: column;
+        row-gap: 4vh;
+    }
+    .text-container {
+        order: 2;
+        width: 100%;
+    }
+    .navigation {
+        align-self: center;
+    }
+}
